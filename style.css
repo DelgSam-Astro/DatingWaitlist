@@ -56,8 +56,7 @@ p {
 
 .container,
 .page-card {
-  width: 100%;
-  max-width: 900px;
+  width: min(100%, 900px);
   background: rgba(255, 255, 255, 0.96);
   border-radius: 28px;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.72);
@@ -76,8 +75,8 @@ p {
 }
 
 .category-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 22px;
   margin-top: 24px;
 }
@@ -91,10 +90,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 240px;
-  max-height: 340px;
-  width: 80%;
-  max-width: 700px;
+  width: min(100%, 700px);
   margin: 0 auto;
 }
 
@@ -142,7 +138,6 @@ p {
   align-items: center;
   justify-content: center;
   padding: 18px 38px;
-  min-width: 240px;
   border-radius: 999px;
   text-decoration: none;
   font-size: 1.4rem;
@@ -204,7 +199,8 @@ p {
   .category-card {
     width: 100%;
     max-width: 100%;
-    min-height: 260px;
+    min-height: auto;
+    padding: 24px 20px;
   }
 
   .tile-button {
@@ -212,6 +208,13 @@ p {
     max-width: 100%;
     padding: 18px 22px;
     margin: 0 auto;
+  }
+
+  .footer-link,
+  .page-card .back-link {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .page-card {
@@ -314,6 +317,28 @@ p {
 .page-card p {
   margin: 0 auto 12px;
   max-width: 640px;
+}
+
+img,
+.page-card img,
+.category-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+.category-card img,
+.page-card img {
+  border-radius: 28px;
+}
+
+.category-card h2,
+.category-card p,
+.page-card h2,
+.page-card h3,
+.footer-link {
+  overflow-wrap: anywhere;
 }
 
 .page-card p + p {
