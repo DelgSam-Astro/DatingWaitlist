@@ -16,10 +16,13 @@ body {
   font-size: 20px;
   background: linear-gradient(135deg, #ff578a 0%, #5a02de 70%);
   color: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0;
   padding: 24px;
+}
+
+.container,
+.page-card {
+  margin: 0 auto;
 }
 
 .logo {
@@ -181,6 +184,38 @@ p {
 @media (min-width: 640px) {
   .button-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 16px;
+  }
+
+  .container,
+  .page-card {
+    padding: 28px 20px;
+  }
+
+  .category-grid {
+    gap: 18px;
+  }
+
+  .category-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: 260px;
+  }
+
+  .tile-button {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px 22px;
+    margin: 0 auto;
+  }
+
+  .page-card {
+    padding: 28px 20px;
   }
 }
 
